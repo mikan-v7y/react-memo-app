@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MemoList from "./components/MemoList";
 import "./App.css";
 
 function App() {
