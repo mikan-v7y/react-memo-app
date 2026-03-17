@@ -1,11 +1,11 @@
 import Memo from "./Memo";
 
-function MemoList({ memos, viewMode }) {
+function MemoList({ memos }) {
   return (
     <ul>
       {memos.map((memo) => (
         <li key={memo.id}>
-          <Memo memo={memo} viewMode={viewMode} />
+          <Memo memo={memo} />
         </li>
       ))}
     </ul>

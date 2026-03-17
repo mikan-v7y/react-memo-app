@@ -1,10 +1,9 @@
-function Memo({ memo, viewMode }) {
-  const [memoTitle, ...memoContent] = memo.content.split("\n");
+function Memo({ memo }) {
+  const [memoTitle] = memo.content.split("\n")[0];
 
   return (
     <div>
       <h2>{memoTitle}</h2>
-      {viewMode === "memoDetail" && <p>{memoContent.join("\n")}</p>}
     </div>
   );
 }
