@@ -4,7 +4,15 @@ import MemoDetail from "./components/MemoDetail";
 import "./App.css";
 
 function App() {
-  const [memos, setMemos] = useState([]);
+  const [memos, setMemos] = useState(() => {
+    const savedMemo = localStorage.getItem("memos");
+    if (savedMemo) {
+      return JSON.parse(savedMemo);
+    } else {
+      localStorage.setItem("memos", JSON.stringify([]));
+      return [];
+    }
+  });
   const [selectedMemo, setSelectedMemo] = useState(null);
 
   return (
