@@ -1,9 +1,7 @@
-function Memo({ memo }) {
-  const [memoTitle] = memo.content.split("\n")[0];
-
+function Memo({ memo, onClick }) {
   return (
-    <div>
-      <h2>{memoTitle}</h2>
+    <div onClick={onClick}>
+      <h2>{memo.content.split("\n")[0]}</h2>
     </div>
   );
 }
