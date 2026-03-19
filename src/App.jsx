@@ -39,6 +39,14 @@ function App() {
     setSelectedMemo({ id: null, content: "" });
   };
 
+  const handleDeleteMemo = () => {
+    const updatedMemos = memos.filter((memo) => memo.id !== selectedMemo.id);
+
+    setMemos(updatedMemos);
+    localStorage.setItem("memos", JSON.stringify(updatedMemos));
+    setSelectedMemo(null);
+  };
+
   return (
     <div>
       <h1>React Memo App</h1>
@@ -47,6 +55,7 @@ function App() {
         <MemoDetail
           selectedMemo={selectedMemo}
           onSave={handleSaveMemo}
+          onDelete={handleDeleteMemo}
           onBack={() => setSelectedMemo(null)}
         />
       ) : (
