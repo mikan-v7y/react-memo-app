@@ -1,16 +1,32 @@
-# React + Vite
+# React Memo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 概要
 
-Currently, two official plugins are available:
+Reactで作成したシンプルなメモアプリです。
+メモの作成・編集・削除・一覧表示ができます。
+データはLocalStorageに保存されます。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 機能
 
-## React Compiler
+- メモの一覧表示
+- メモの作成
+- メモの編集
+- メモの削除
+- LocalStorageによるデータ保存
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 使用技術
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- LocalStorage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 工夫した点
+
+- コンポーネントを分割し、責務ごとに整理しました
+
+## 起動方法
+
+```bash
+npm install
+npm run dev
+```
