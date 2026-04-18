@@ -5,7 +5,7 @@ function MemoDetail({ selectedMemo, onSave, onDelete, onBack }) {
   const [content, setContent] = useState(selectedMemo.content);
 
   const handleSaveClick = () => {
-    if (!content) {
+    if (content.trim().length === 0) {
       alert("1文字以上入力してください");
       return;
     }
