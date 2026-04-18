@@ -1,13 +1,16 @@
-import Memo from "./Memo";
+import "./MemoList.css";
+import Memo from "../Memo";
 
 function MemoList({ memos, setSelectedMemo, onAddMemo }) {
   return (
     <div>
-      <button onClick={onAddMemo}>新規メモ作成</button>
+      <button className="button" onClick={onAddMemo}>
+        新規メモ作成
+      </button>
 
-      <ul>
+      <ul className="memo-list">
         {memos.map((memo) => (
-          <li key={memo.id}>
+          <li key={memo.id} className="memo-item">
             <Memo memo={memo} onClick={() => setSelectedMemo(memo)} />
           </li>
         ))}
