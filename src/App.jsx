@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MemoList from "./components/MemoList/MemoList";
-import MemoDetail from "./components/MemoDetail";
+import MemoDetail from "./components/MemoDetail/MemoDetail";
 import "./App.css";
 
 function App() {
