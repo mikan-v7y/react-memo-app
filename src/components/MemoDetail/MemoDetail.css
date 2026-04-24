@@ -1,0 +1,37 @@
+.memo-detail {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.memo-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  resize: vertical;
+}
+
+.memo-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.memo-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

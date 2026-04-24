@@ -1,0 +1,21 @@
+.button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.memo-list {
+  padding: 30px;
+  margin: 30px;
+}
+
+.memo-item {
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+}
