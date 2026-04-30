@@ -1,9 +1,13 @@
 import { useState } from "react";
 import Memo from "../Memo";
 import "./MemoDetail.css";
+import { useContext } from "react";
+import AuthContext from "../../contexts/AuthContext";
 
 function MemoDetail({ selectedMemo, onSave, onDelete, onBack }) {
   const [content, setContent] = useState(selectedMemo.content);
+  const { isLoggedIn } = useContext(AuthContext);
+
 
   const handleSaveClick = () => {
     const trimmedContent = content.trim();
@@ -24,8 +28,8 @@ function MemoDetail({ selectedMemo, onSave, onDelete, onBack }) {
       />
 
       <div className="memo-buttons">
-        <button onClick={handleSaveClick}>保存</button>
-        <button onClick={onDelete}>削除</button>
+        {isLoggedIn && <button onClick={handleSaveClick}>保存</button>}
+        {isLoggedIn && <button onClick={onDelete}>削除</button>}
         <button onClick={onBack}>戻る</button>
       </div>
     </div>
