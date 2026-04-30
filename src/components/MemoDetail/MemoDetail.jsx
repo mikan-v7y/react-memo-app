@@ -1,13 +1,11 @@
 import { useState } from "react";
 import Memo from "../Memo";
 import "./MemoDetail.css";
-import { useContext } from "react";
-import AuthContext from "../../contexts/AuthContext";
+import { useAuth } from "../../hooks/useAuth";
 
 function MemoDetail({ selectedMemo, onSave, onDelete, onBack }) {
+  const { isLoggedIn } = useAuth();
   const [content, setContent] = useState(selectedMemo.content);
-  const { isLoggedIn } = useContext(AuthContext);
-
 
   const handleSaveClick = () => {
     const trimmedContent = content.trim();

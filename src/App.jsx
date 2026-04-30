@@ -2,10 +2,10 @@ import { useState } from "react";
 import MemoList from "./components/MemoList/MemoList";
 import MemoDetail from "./components/MemoDetail/MemoDetail";
 import "./App.css";
-import AuthContext from "./contexts/AuthContext";
+import { useAuth } from "./hooks/useAuth";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const [memos, setMemos] = useState(() => {
     const savedMemo = localStorage.getItem("memos");
@@ -51,35 +51,28 @@ function App() {
   };
 
   return (
-    <AuthContext.Provider
-      value={{
-        isLoggedIn,
-        setIsLoggedIn,
-      }}
-    >
-      <div>
-        <h1>React Memo App</h1>
+    <div>
+      <h1>React Memo App</h1>
 
-        <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
-          {isLoggedIn ? "ログアウト" : "ログイン"}
-        </button>
+      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+        {isLoggedIn ? "ログアウト" : "ログイン"}
+      </button>
 
-        {selectedMemo ? (
-          <MemoDetail
-            selectedMemo={selectedMemo}
-            onSave={handleSaveMemo}
-            onDelete={handleDeleteMemo}
-            onBack={() => setSelectedMemo(null)}
-          />
-        ) : (
-          <MemoList
-            memos={memos}
-            setSelectedMemo={setSelectedMemo}
-            onAddMemo={handleAddMemo}
-          />
-        )}
-      </div>
-    </AuthContext.Provider>
+      {selectedMemo ? (
+        <MemoDetail
+          selectedMemo={selectedMemo}
+          onSave={handleSaveMemo}
+          onDelete={handleDeleteMemo}
+          onBack={() => setSelectedMemo(null)}
+        />
+      ) : (
+        <MemoList
+          memos={memos}
+          setSelectedMemo={setSelectedMemo}
+          onAddMemo={handleAddMemo}
+        />
+      )}
+    </div>
   );
 }
 
