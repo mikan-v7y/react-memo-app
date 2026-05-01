@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Memo from "../Memo";
 import "./MemoDetail.css";
+import { useAuth } from "../../hooks/useAuth";
 
 function MemoDetail({ selectedMemo, onSave, onDelete, onBack }) {
+  const { isLoggedIn } = useAuth();
   const [content, setContent] = useState(selectedMemo.content);
 
   const handleSaveClick = () => {
@@ -24,8 +26,8 @@ function MemoDetail({ selectedMemo, onSave, onDelete, onBack }) {
       />
 
       <div className="memo-buttons">
-        <button onClick={handleSaveClick}>保存</button>
-        <button onClick={onDelete}>削除</button>
+        {isLoggedIn && <button onClick={handleSaveClick}>保存</button>}
+        {isLoggedIn && <button onClick={onDelete}>削除</button>}
         <button onClick={onBack}>戻る</button>
       </div>
     </div>
