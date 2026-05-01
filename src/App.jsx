@@ -54,7 +54,10 @@ function App() {
     <div>
       <h1>React Memo App</h1>
 
-      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+      <button
+        className="auth-button"
+        onClick={() => setIsLoggedIn(!isLoggedIn)}
+      >
         {isLoggedIn ? "ログアウト" : "ログイン"}
       </button>
 
